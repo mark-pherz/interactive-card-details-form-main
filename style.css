@@ -1,0 +1,236 @@
+:root {
+  --linear-gradient-start: hsl(278, 94%, 24%);
+  --linear-gradient-end: hsl(278, 100%, 13%);
+  --red: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 33.5% 65.5%;
+  grid-template-rows: 100%;
+}
+
+.card-section {
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--linear-gradient-end) 0%,
+    var(--linear-gradient-start) 40%,
+    var(--linear-gradient-end) 80%,
+    var(--linear-gradient-end) 100%
+  );
+  position: relative;
+}
+
+.card-front {
+  position: absolute;
+  height: 245px;
+  width: 447px;
+  background-image: url(./images/bg-card-front.png);
+  top: 128px;
+  left: clamp(0.889rem, -12.963rem + 27.704vw, 9.2rem);
+  border-radius: 11px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 48px 100px 1fr;
+  padding: 26px 32px 24px 32px;
+}
+
+.card-front-avatar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.big-avatar {
+  height: 48px;
+  width: 48px;
+  background-color: aliceblue;
+  border-radius: 50%;
+}
+
+.small-avatar {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid aliceblue;
+}
+
+.card-front-number {
+  padding-top: 60px;
+  font-size: 1.5rem;
+  letter-spacing: 0.225rem;
+}
+
+#card-number-card {
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+}
+
+.card-front-name-exp {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: var(--white);
+  font-size: 0.82rem;
+  letter-spacing: 0.09rem;
+}
+
+#cardholder-name-card {
+  text-transform: uppercase;
+}
+
+.card-exp {
+  font-variant-numeric: tabular-nums;
+}
+
+.card-back {
+  position: absolute;
+  height: 245px;
+  width: 447px;
+  background-image: url(./images/bg-card-back.png);
+  border-radius: 11px;
+  overflow: hidden;
+  top: 411px;
+  left: clamp(0.889rem, -21.519rem + 44.815vw, 14.333rem);
+}
+
+.card-back .cvc-card {
+}
+
+#cvc-card {
+  position: absolute;
+  right: 55px;
+  top: 110px;
+  color: var(--white);
+  font-size: 0.82rem;
+  letter-spacing: 0.09rem;
+}
+
+.input-section {
+  height: 100%;
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  right: clamp(0.889rem, -17.259rem + 36.296vw, 11.778rem);
+  top: 216px;
+  width: 382px;
+  height: 354.7px;
+}
+
+.error-field {
+  height: 25px;
+  font-size: 0.55rem;
+  color: var(--red);
+  padding: 3px;
+}
+
+.form label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.09rem;
+  color: var(--very-dark-violet);
+  margin-bottom: 6px;
+}
+
+input {
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid var(--light-grayish-violet);
+  padding-left: 15px;
+  color: var(--very-dark-violet);
+}
+
+.error-border {
+  border: 1px solid var(--red);
+}
+
+.form input:focus {
+  border-color: var(--very-dark-violet);
+}
+
+input#cardholder-name,
+input#card-number {
+  width: 382px;
+  height: 45px;
+}
+
+input#exp-month,
+input#exp-year {
+  height: 45px;
+  width: 80px;
+  margin-right: 6px;
+}
+
+input#cvc {
+  height: 45px;
+  width: 190px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+form#credit-card-form button {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 55px;
+  border-radius: 10px;
+  margin-top: -12px;
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+}
+
+.thank-you {
+  width: 382px;
+  height: 354.7px;
+  top: 235px;
+  position: absolute;
+  right: clamp(0.889rem, -17.259rem + 36.296vw, 11.778rem);
+  display: grid;
+  justify-items: center;
+}
+
+.thank-you h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  margin-top: 32px;
+}
+
+.thank-you p {
+  color: var(--dark-grayish-violet);
+  margin-top: 8px;
+}
+
+.thank-you button {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 55px;
+  border-radius: 10px;
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+  margin-top: 36px;
+}
+
+.hide {
+  display: none;
+}
+
+
