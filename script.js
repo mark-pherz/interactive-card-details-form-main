@@ -50,8 +50,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   nameField.addEventListener("blur", function () {
     if (nameField.value.trim() === "") {
-      const names = ["Albert", "Marie", "Isaac", "Ada", "Nikola"];
-      const surnames = ["Einstein", "Curie", "Newton", "Lovelace", "Tesla"];
+      const names = [
+        "Albert",
+        "Marie",
+        "Isaac",
+        "Ada",
+        "Nikola",
+        "Xi",
+        "Donald",
+        "Robert",
+      ];
+      const surnames = [
+        "Einstein",
+        "Curie",
+        "Newton",
+        "Lovelace",
+        "Tesla",
+        "Zelensky",
+        "Musk",
+      ];
       const nameIndex = Math.floor(Math.random() * names.length);
       const surnameIndex = Math.floor(Math.random() * surnames.length);
       const name = names[nameIndex] + " " + surnames[surnameIndex];
@@ -226,11 +243,16 @@ document.addEventListener("DOMContentLoaded", () => {
       cvcCode.value
     ) {
       document.getElementById("thank-you").classList.remove("hide");
-      document.getElementById("input-section").classList.add("hide");
+      document.getElementById("main-form").classList.add("hide");
     }
   });
   continue_.addEventListener("click", () => {
+    nameField.value = "";
+    cardNumberField.value = "";
+    expMonthField.value = "";
+    expYearField.value = "";
+    cvcCode.value = "";
     document.getElementById("thank-you").classList.add("hide");
-    document.getElementById("input-section").classList.remove("hide");
+    document.getElementById("main-form").classList.remove("hide");
   });
 });

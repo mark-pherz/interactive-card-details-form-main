@@ -18,6 +18,7 @@ body {
   display: grid;
   grid-template-columns: 33.5% 65.5%;
   grid-template-rows: 100%;
+  position: relative;
 }
 
 .card-section {
@@ -69,7 +70,7 @@ body {
 .card-front-number {
   padding-top: 60px;
   font-size: 1.5rem;
-  letter-spacing: 0.225rem;
+  letter-spacing: 0.24rem;
 }
 
 #card-number-card {
@@ -119,7 +120,6 @@ body {
 
 .input-section {
   height: 100%;
-  position: relative;
 }
 
 .form {
@@ -215,7 +215,7 @@ form#credit-card-form button {
 
 .thank-you p {
   color: var(--dark-grayish-violet);
-  margin-top: 8px;
+  padding-top: 8px;
 }
 
 .thank-you button {
@@ -225,12 +225,120 @@ form#credit-card-form button {
   height: 55px;
   border-radius: 10px;
   color: var(--white);
-  background-color: var(--very-dark-violet);
   margin-top: 36px;
+  background-color: var(--very-dark-violet);
 }
 
 .hide {
   display: none;
 }
 
+@media (max-width: 900px) {
+  body {
+    grid-template-columns: unset;
+    grid-template-rows: 240px 1fr;
+    position: relative;
+  }
+  .card-front {
+    height: 164.4px;
+    width: 300px;
+    background-size: 100%;
+    top: 133px;
+    left: clamp(0.625rem, -5.927rem + 32.759vw, 12.5rem);
+    border-radius: 6.02px;
+    grid-template-rows: 26.3px 54.8px 1fr;
+    padding: 16.248px 17.53px 16.15px 17.53px;
+    z-index: 9999;
+  }
 
+  .card-front-avatar {
+    gap: 8.768px;
+  }
+
+  .big-avatar {
+    height: 26.304px;
+    width: 26.304px;
+  }
+
+  .small-avatar {
+    height: 10.96px;
+    width: 10.96px;
+  }
+
+  .card-front-number {
+    padding-top: 46px;
+    font-size: 0.9rem;
+  }
+
+  .card-front-name-exp {
+    font-size: 0.62rem;
+    font-weight: 300;
+  }
+
+  .card-back {
+    height: 164.4px;
+    width: 300px;
+    background-size: 100%;
+    border-radius: 6.02px;
+    top: 40px;
+    left: unset;
+    right: clamp(0.625rem, -5.927rem + 32.759vw, 12.5rem);
+  }
+
+  #cvc-card {
+    right: 38px;
+    top: 73px;
+    font-size: 0.66rem;
+  }
+
+  .input-section {
+    height: 100%;
+    display: grid;
+    justify-content: center;
+  }
+
+  .form {
+    position: unset;
+    right: unset;
+    top: unset;
+    margin: 100px 10px;
+    width: auto;
+    max-width: 400px;
+  }
+
+  .error-field {
+    height: 20px;
+    font-size: 0.6rem;
+    padding: 2px;
+  }
+
+  input#cardholder-name,
+  input#card-number {
+    width: 100%;
+  }
+
+  input#exp-month,
+  input#exp-year {
+    width: 44%;
+  }
+
+  input#cvc {
+    width: 100%;
+  }
+  .thank-you {
+    width: unset;
+    max-width: 400px;
+    top: 521.5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    width: 1440px;
+  }
+}
